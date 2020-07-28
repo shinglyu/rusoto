@@ -8,7 +8,7 @@ Please follow the [AWS documentation on best practices](https://docs.aws.amazon.
 
 Much like the [standard AWS toolchain](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html), Rusoto has the ability to source AWS access credentials from multiple sources, either independently or in a tiered fashion.
 
-1. Environment variables via [`rusoto_core::EnvironmentProvider`](https://docs.rs/rusoto_credential/latest/rusoto_credential/struct.EnvironmentProvider.html) (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`)
+1. Environment variables via [`rusoto_core::EnvironmentProvider`](https://docs.rs/rusoto_credential/latest/rusoto_credential/struct.EnvironmentProvider.html) (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`). AWS Lambda adds these envs by default. So for Lambda use this provider.
 2. AWS credentials file via [`rusoto_core::ProfileProvider`](https://docs.rs/rusoto_credential/latest/rusoto_credential/struct.ProfileProvider.html)
 3. IAM ECS container profile via [`rusoto_core::ContainerProvider`](https://docs.rs/rusoto_credential/latest/rusoto_credential/struct.ContainerProvider.html)
 4. IAM EC2 instance profile via [`rusoto_core::InstanceMetadataProvider`](https://docs.rs/rusoto_credential/latest/rusoto_credential/struct.InstanceMetadataProvider.html)
